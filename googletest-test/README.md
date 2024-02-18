@@ -1,6 +1,6 @@
-# UMock examples: Simple lib
+# UMock examples: GoogleTest
 
-This example illustrates the ease of use of UMock combined with CMocka.
+This example illustrates the ease of use of UMock combined with GoogleTest.
 
 ## Usage
 Build and test with
