@@ -25,6 +25,7 @@ if (TESTING)
     include(FetchContent)
 
     # Fetch UMock
+    set(UMOCK_VERBOSE OFF CACHE BOOL "UMock: Verbose mock configuration" FORCE)
     # FetchContent_Declare(
     #     umock
     #     SOURCE_DIR "${CMAKE_SOURCE_DIR}/../../umock/"
@@ -35,7 +36,6 @@ if (TESTING)
         GIT_SHALLOW    1
     )
     FetchContent_MakeAvailable(umock)
-    include(${umock_SOURCE_DIR}/umock/cmake/umock.cmake)
 
     # Fetch GoogleTest
     FetchContent_Declare(
