@@ -22,8 +22,8 @@ MOCK(void, free, trace, (void *__ptr))
 TEST(mylib_test, init_and_term) {
     struct mylib_st *opaque;
 
-    MOCKUSE(malloc, trace_and_check);
-    MOCKUSE(free, trace);
+    MOCKUSEONCE(malloc, trace_and_check);
+    MOCKUSEONCE(free, trace);
     EXPECT_EQ(mylib_init(&opaque), 0);
     EXPECT_EQ(mylib_term(opaque), 0);
 }

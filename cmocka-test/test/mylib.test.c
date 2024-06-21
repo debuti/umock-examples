@@ -27,8 +27,8 @@ static void mylib_test(void **state)
     struct mylib_st *opaque;
 
     expect_value(MOCKNAME(malloc, trace_and_check), __size, 4);
-    MOCKUSE(malloc, trace_and_check);
-    MOCKUSE(free, trace);
+    MOCKUSEONCE(malloc, trace_and_check);
+    MOCKUSEONCE(free, trace);
     assert_int_equal(mylib_init(&opaque), 0);
     assert_int_equal(mylib_term(opaque), 0);
 }
